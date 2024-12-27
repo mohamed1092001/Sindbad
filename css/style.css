@@ -206,7 +206,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     text-shadow: 0px 0px 10px #000000a2;
-
+    text-align: center;
 }
 
 /* ######## */
@@ -239,7 +239,7 @@ body {
 
 @media (min-width:0px) and (max-width:600px) {
     .wheel-container {
-        width: 350px;
+        width: 320px;
     }
 
     .wheel-container .spin-btn {
@@ -258,4 +258,13 @@ body {
         font-size: 12px;
         font-style: italic;
     }
+
+    .wheel-container .wheel .offers .offer .child p {
+        font-size: 10px;
+    }
+
+        .wheel-container .wheel .offers .offer .child{
+            width: 45px;
+            height: 45px;
+        }
 }
