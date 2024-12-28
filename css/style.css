@@ -19,13 +19,10 @@
     box-sizing: border-box;
     font-family: 'ExpoArabicMedium', sans-serif;
     user-select: none;
-        /* منع التحديد */
-        -webkit-user-select: none;
-        /* دعم للمتصفحات المبنية على Webkit */
-        -moz-user-select: none;
-        /* دعم للمتصفحات المبنية على Mozilla */
-        -ms-user-select: none;
-        /* دعم للمتصفحات القديمة لـ IE */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    
 }
 
 
@@ -652,6 +649,13 @@ body {
     }
 
     .cobon {
-        width: 90%;
+        width: 80%;
     }
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
