@@ -53,29 +53,50 @@ $(document).ready(function () {
     });
 
     // keyboard - dev tools
-    // document.addEventListener("keydown", function (e) {
-    //     // منع فتح DevTools باستخدام F12 أو Ctrl+Shift+I أو Ctrl+Shift+J
-    //     if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || (e.ctrlKey && e.key === "U")) {
-    //         e.preventDefault();
-    //     }
-    // });
+    document.addEventListener("keydown", function (e) {
+        // منع فتح DevTools باستخدام F12 أو Ctrl+Shift+I أو Ctrl+Shift+J
+        if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || (e.ctrlKey && e.key === "U")) {
+            e.preventDefault();
+        }
+    });
 
-    // document.addEventListener("contextmenu", function (e) {
-    //     e.preventDefault();
-    // });
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
 
-    // setInterval(function () {
-    //     if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
-    //         document.body.innerHTML = ""; // مسح الصفحة
-    //         alert("DevTools Detected! Please close it.");
-    //     }
-    // }, 500);
+    setInterval(function () {
+        if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
+            document.body.innerHTML = ""; // مسح الصفحة
+            alert("DevTools Detected! Please close it.");
+        }
+    }, 500);
 });
 
 
 $(".next-btn").click(function () {
-    $(".form-container form").addClass("first-done")
-    setTimeout(function () {
-        $(".quiz-1").css("transform", "translateX(-111.5%)")
-    }, 300)
-})
+    // جلب القيم من الحقول
+    const name = document.getElementById('name_inp').value.trim();
+    const phone = document.getElementById('phone_inp').value.trim();
+    const state = document.getElementById('state').value;
+
+    // التحقق من القيم
+    if (name === '') {
+        alert('من فضلك أدخل اسمك كاملًا');
+        return;
+    } else if (phone === '') {
+        alert('من فضلك أدخل رقم تليفونك');
+        return;
+    } else if (!/^(7|9|2)[0-9]{7}$/.test(phone)) { // التحقق من رقم الهاتف العماني
+        alert('من فضلك أدخل رقم تليفون عماني صحيح');
+        return;
+    } else if (state === '0') {
+        alert('من فضلك اختر الولاية');
+        return;
+    } else {
+        // في حالة التحقق بنجاح
+        $(".form-container form").addClass("first-done")
+        setTimeout(function () {
+            $(".quiz-1").css("transform", "translateX(-111.5%)")
+        }, 300)
+    }
+});
