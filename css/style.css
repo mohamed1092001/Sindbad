@@ -272,10 +272,13 @@ body {
 
 .details-box {
     width: 50%;
+    padding: 20px;
 }
 
 .details-box img {
     width: 150px;
+    height: 110px;
+    object-fit: cover;
     display: block;
     margin: 0% auto;
 }
@@ -286,6 +289,11 @@ body {
     width: 90%;
     color: #444;
     margin-bottom: 10px;
+}
+
+.details-box p:nth-child(2){
+    font-size: 14px;
+    color: #30727e;
 }
 
 .details-box .links {
