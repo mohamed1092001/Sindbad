@@ -1,12 +1,43 @@
 $(document).ready(function () {
 
+    // الزينه
+
+    function winning() {
+        var duration = 15 * 1000; // مدة التأثير بالميلي ثانية (15 ثانية)
+        var animationEnd = Date.now() + duration;
+
+        function triggerConfetti() {
+            confetti({
+                particleCount: 100, // عدد الجزيئات
+                angle: 90, // زاوية إطلاق الجزيئات
+                spread: 70, // الانتشار
+                origin: { x: 0.5, y: 0.5 }, // النقطة التي تنبعث منها الجزيئات
+                colors: ['#ff5733', '#33c1ff', '#ffbc33'], // الألوان
+            });
+        }
+
+        // بدء التأثير
+        triggerConfetti();
+
+        // إعادة التأثير عدة مرات حتى تنتهي المدة
+        var interval = setInterval(function () {
+            if (Date.now() < animationEnd) {
+                triggerConfetti();
+            } else {
+                clearInterval(interval); // إيقاف التأثير بعد انتهاء الوقت
+            }
+        }, 500); // تكرار كل نصف ثانية
+    }
+
+    // #######
+
     var stopAngle;
 
     // الكود الذي سيشغل العجلة عند الضغط على الزر
     $(".spin-btn").click(function () {
 
         // التحقق من وجود session باسم log-sindbad بعد الضغط على الزر
-        if (sessionStorage.getItem("log-sindbad")) {
+        if (!sessionStorage.getItem("log-sindbad")) {
             // إذا كانت session موجودة، ننفذ الكود الخاص بالتدوير
             $(this).attr("disabled", "disabled");
             let option = Math.floor(Math.random() * 2);
@@ -40,12 +71,16 @@ $(document).ready(function () {
                         // هنا يمكن إضافة منطق للتحقق من الجوائز أو عرض النتيجة
                         if (option == 0) {
                             console.log("المكسب الاصفر");
+                            winning()
                         } else {
                             console.log("المكسب الفيروزى");
+                            winning()
                         }
                     }
                 }
             );
+
+
         } else {
             // إذا لم توجد session، تظهر رسالة
             $(".form-container").fadeIn();
@@ -112,3 +147,5 @@ $(".next-btn").click(function () {
         }, 300)
     }
 });
+
+
