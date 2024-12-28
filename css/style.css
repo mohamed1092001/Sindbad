@@ -14,6 +14,7 @@
     margin: 0%;
     padding: 0%;
     border: none;
+    outline: none;
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'ExpoArabicMedium', sans-serif;
@@ -114,7 +115,7 @@ body {
 
 .wheel-container .spin-btn:hover {
     background-color: #f6f6f6;
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .wheel-container .spin-btn:active {
@@ -237,6 +238,288 @@ body {
     }
 }
 
+
+/* #################### */
+
+.form-container {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #00000067;
+    z-index: 5;
+    direction: rtl;
+    backdrop-filter: blur(3px);
+    display: none;
+}
+
+.form-container .form-father {
+    margin: auto;
+    display: flex;
+    width: 800px;
+    background-color: #f6f6f6;
+    box-shadow: 0px 0px 6px 3px #0000001c;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.details-box {
+    width: 50%;
+}
+
+.details-box img {
+    width: 150px;
+    display: block;
+    margin: 0% auto;
+}
+
+.details-box p {
+    margin: 0% auto;
+    text-align: center;
+    width: 90%;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.details-box .links {
+    margin: 0px auto;
+    width: fit-content;
+    display: flex;
+    gap: 5px;
+}
+
+.details-box .links a {
+    color: #429FAF;
+    border: solid 2px #429FAF;
+    width: 32px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+}
+
+.details-box .links a:hover {
+    background-color: #429FAF;
+    color: #fff;
+}
+
+.form-container form {
+    background-color: #429FAF;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.form-container form h1 {
+    font-size: 27px;
+    font-weight: normal;
+    color: #f6f6f6;
+    margin-bottom: 20px;
+}
+
+.form-container form .quiz {
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-container form .quiz input {
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    box-shadow: 0px 0px 6px 3px #00000010;
+    padding: 0px 10px;
+}
+
+.form-container form .quiz select {
+    width: 100%;
+    display: block;
+    margin: auto;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    box-shadow: 0px 0px 6px 3px #00000010;
+    padding: 0px 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-container form .quiz select option {
+    padding: 10px;
+}
+
+.form-container form .quiz .select-container {
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0px 0px 6px 3px #00000010;
+
+}
+
+.form-container form .quiz .select-container .float-btn {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    font-size: 14px;
+    transform: translateY(-50%);
+    background-color: transparent;
+}
+
+.form-container form .quiz .next-btn,
+.form-container form .quiz .send-btn {
+    width: fit-content;
+    padding: 10px 25px;
+    background-color: #30727e;
+    color: #fff;
+    border-radius: 3px;
+    margin: 0px auto;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-container form .quiz .next-btn:hover,
+.form-container form .quiz .send-btn:hover {
+    background-color: #afe2eb;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 0px 0px 6px 3px #00000010;
+}
+
+.form-container .first-done .quiz-1 input,
+.form-container .first-done .quiz-1 .select-container,
+.form-container .first-done .quiz-1 .next-btn {
+    transform: translateX(-105%);
+}
+
+.form-container .first-done .quiz>* {
+    transition: .4s ease;
+}
+
+/* ###### */
+
+.form-container .quiz-1 {
+    position: relative;
+    transition: .4s;
+    height: 60%;
+    justify-content: center;
+}
+
+.form-container .quiz-1 .quiz-2 {
+    position: absolute;
+    left: 111.5%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+.form-container .quiz-1 .quiz-2 h2 {
+    color: #f6f6f6;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+}
+
+
+.form-container .quiz-1 .quiz-2 .choose-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-container .quiz-1 .quiz-2 .choose-box .item {
+    width: calc((100% - 20px) / 3);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.form-container .quiz-1 .quiz-2 .choose-box .item::after {
+    content: " ";
+    background-color: #00000052;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.form-container .quiz-1 .quiz-2 .choose-box .item img {
+    width: 100%;
+    height: 60px;
+    display: block;
+    object-fit: cover;
+}
+
+.form-container .quiz-1 .quiz-2 .choose-box .item p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2%;
+    color: #f6f6f6;
+    text-shadow: 0px 0px 10px #000000be, 0px 0px 10px #000000be;
+    z-index: 2;
+    font-size: 13px;
+}
+
+.form-container .quiz-1 .quiz-2 .choose-box .item label {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* ####### */
+
+.form-container .quiz-1 .quiz-2 .choose-box .item label::after {
+    content: " ";
+    position: absolute;
+    top: 7%;
+    right: 7%;
+    width: 8px;
+    aspect-ratio: 1/1;
+    border: solid 2px #fff;
+    border-radius: 50%;
+}
+
+.form-container .quiz-1 .quiz-2 .choose-box .item label input[type="checkbox"] {
+    position: absolute;
+    left: 300%;
+    top: 300%;
+}
+
+.form-container .quiz-1 .quiz-2 .choose-box .item label:has(input[type="checkbox"]:checked)::after {
+    background-color: #f6f6f6;
+    border: solid 2px #f6f6f6;
+}
+
+
+/* #########################3 */
+
 @media (min-width:0px) and (max-width:600px) {
     .wheel-container {
         width: 320px;
@@ -249,22 +532,46 @@ body {
     }
 
     .wheel-container .spin-btn .spin-action {
-        color: #FFC107;
+
         font-size: 14px;
     }
 
     .wheel-container .spin-btn .spin-reward {
-        color: #429FAF;
         font-size: 12px;
-        font-style: italic;
     }
 
     .wheel-container .wheel .offers .offer .child p {
         font-size: 10px;
     }
 
-        .wheel-container .wheel .offers .offer .child{
-            width: 50px;
-            height: 50px;
-        }
+    .wheel-container .wheel .offers .offer .child {
+        width: 50px;
+        height: 50px;
+    }
+
+    .form-container .form-father {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .form-container .form-father>* {
+        width: 100% !important;
+    }
+
+    .form-container form {
+        padding: 20px 0px;
+    }
+
+    .form-container .quiz-1 {
+        height: 220px;
+    }
+
+    .details-box .links {
+        display: none;
+    }
+
+    .welcome {
+        width: 90%;
+    }
 }
