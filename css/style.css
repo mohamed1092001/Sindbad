@@ -649,7 +649,11 @@ body {
     }
 
     .cobon {
-        width: 80%;
+        width: 85%;
+    }
+
+    .cobon-information p{
+        font-size: 12px;
     }
 }
 
