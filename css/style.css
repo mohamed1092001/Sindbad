@@ -575,7 +575,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 20px;
+    padding: 6px 2%;
 }
 
 .cobon-information p {
