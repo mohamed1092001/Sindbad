@@ -534,18 +534,17 @@ body {
     }
 
     .wheel-container .spin-btn {
-        width: 25%;
-        top: calc((100% - 25%) / 2);
-        left: calc((100% - 25%) / 2);
+        width: 28%;
+        top: calc((100% - 28%) / 2);
+        left: calc((100% - 28%) / 2);
     }
 
     .wheel-container .spin-btn .spin-action {
-
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .wheel-container .spin-btn .spin-reward {
-        font-size: 12px;
+        font-size: 9px;
     }
 
     .wheel-container .wheel .offers .offer .child p {
