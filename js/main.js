@@ -72,9 +72,15 @@ $(document).ready(function () {
                         if (option == 0) {
                             console.log("المكسب الاصفر");
                             winning()
+                            setTimeout(function () {
+                                $(".cobon").fadeIn(800)
+                            }, 500)
                         } else {
                             console.log("المكسب الفيروزى");
                             winning()
+                            setTimeout(function () {
+                                $(".cobon").fadeIn(800)
+                            }, 500)
                         }
                     }
                 }
