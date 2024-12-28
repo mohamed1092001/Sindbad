@@ -588,62 +588,15 @@ body {
     }
 }
 
-/* الرسائل الخطأ الناعمة */
-.error-msg {
-    color: #e74c3c;
-    /* لون أحمر ناعم */
-    font-size: 13px;
-    margin-top: 5px;
+.error {
+    height: 40px;
+    border-radius: 0.375rem;
+    font-size: .9rem;
+    display: block;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
     display: none;
-    transition: all 0.3s ease;
-    /* تأثير ناعم */
-}
-
-/* الحقول عند وجود خطأ */
-input.error,
-select.error {
-    border: 1px solid #e74c3c;
-    /* لون أحمر ناعم */
-    background-color: #fff5f5;
-    /* خلفية ناعمة */
-    box-shadow: 0 0 8px rgba(231, 76, 60, 0.2);
-    /* ظل خفيف */
-    transition: all 0.3s ease;
-    /* تأثير ناعم */
-}
-
-/* placeholder عند وجود خطأ */
-input.error::placeholder {
-    color: #e74c3c;
-    opacity: 0.7;
-    /* شفافية ناعمة */
-}
-
-/* تأثير التركيز (Focus) */
-input:focus,
-select:focus {
-    outline: none;
-    border: 1px solid #3498db;
-    /* لون أزرق ناعم عند التركيز */
-    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
-    background-color: #f9f9f9;
-    /* لون خلفية مريح */
-}
-
-/* زر ناعم */
-button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    /* لون أزرق هادئ */
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background-color: #2980b9;
-    /* أزرق أغمق عند التمرير */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 40px;
+    text-align: center;
 }

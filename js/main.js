@@ -81,16 +81,28 @@ $(".next-btn").click(function () {
 
     // التحقق من القيم
     if (name === '') {
-        alert('من فضلك أدخل اسمك كاملًا');
+        $(".error").slideDown().html('من فضلك أدخل اسمك ')
+        setTimeout(function () {
+            $(".error").slideUp()
+        }, 2000)
         return;
     } else if (phone === '') {
-        alert('من فضلك أدخل رقم تليفونك');
+        $(".error").slideDown().html('من فضلك أدخل رقم تليفونك')
+        setTimeout(function () {
+            $(".error").slideUp()
+        }, 2000)
         return;
     } else if (!/^(7|9|2)[0-9]{7}$/.test(phone)) { // التحقق من رقم الهاتف العماني
-        alert('من فضلك أدخل رقم تليفون عماني صحيح');
+        $(".error").slideDown().html('من فضلك أدخل رقم تليفون عماني صحيح')
+        setTimeout(function () {
+            $(".error").slideUp()
+        }, 2000)
         return;
     } else if (state === '0') {
-        alert('من فضلك اختر الولاية');
+        $(".error").slideDown().html('من فضلك اختر الولاية')
+        setTimeout(function () {
+            $(".error").slideUp()
+        }, 2000)
         return;
     } else {
         // في حالة التحقق بنجاح
