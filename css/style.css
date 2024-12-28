@@ -18,6 +18,14 @@
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'ExpoArabicMedium', sans-serif;
+    user-select: none;
+        /* منع التحديد */
+        -webkit-user-select: none;
+        /* دعم للمتصفحات المبنية على Webkit */
+        -moz-user-select: none;
+        /* دعم للمتصفحات المبنية على Mozilla */
+        -ms-user-select: none;
+        /* دعم للمتصفحات القديمة لـ IE */
 }
 
 
@@ -526,6 +534,62 @@ body {
 }
 
 
+
+
+.error {
+    height: 40px;
+    border-radius: 0.375rem;
+    font-size: .9rem;
+    display: block;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    display: none;
+    line-height: 40px;
+    text-align: center;
+}
+
+/* #################3 */
+
+.cobon {
+    width: 400px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 44;
+    box-shadow: 0px 10px 20px #00000080;
+    display: none;
+}
+
+.cobon img {
+    width: 100%;
+    display: block;
+}
+
+
+.cobon-information {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 20px;
+}
+
+.cobon-information p {
+    background-color: #222;
+    color: #f6f6f6;
+    padding: 3px 13px;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+
 /* #########################3 */
 
 @media (min-width:0px) and (max-width:600px) {
@@ -590,57 +654,4 @@ body {
     .cobon {
         width: 90%;
     }
-}
-
-.error {
-    height: 40px;
-    border-radius: 0.375rem;
-    font-size: .9rem;
-    display: block;
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    display: none;
-    line-height: 40px;
-    text-align: center;
-}
-
-/* #################3 */
-
-.cobon {
-    width: 400px;
-    border-radius: 5px;
-    overflow: hidden;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 44;
-    box-shadow: 0px 10px 20px #00000080;
-    display: none;
-}
-
-.cobon img {
-    width: 100%;
-    display: block;
-}
-
-
-.cobon-information {
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 20px;
-}
-
-.cobon-information p {
-    background-color: #222;
-    color: #f6f6f6;
-    padding: 3px 13px;
-    font-size: 13px;
-    border-radius: 3px;
 }

@@ -73,14 +73,14 @@ $(document).ready(function () {
                             console.log("المكسب الاصفر");
                             winning()
                             setTimeout(function () {
-                                $(".cobon").fadeIn(800)
-                            }, 500)
+                                $(".cobon").fadeIn(700)
+                            }, 300)
                         } else {
                             console.log("المكسب الفيروزى");
                             winning()
                             setTimeout(function () {
-                                $(".cobon").fadeIn(800)
-                            }, 500)
+                                $(".cobon").fadeIn(700)
+                            }, 300)
                         }
                     }
                 }
@@ -155,3 +155,5 @@ $(".next-btn").click(function () {
 });
 
 
+
+document.addEventListener('selectstart', (e) => e.preventDefault());
