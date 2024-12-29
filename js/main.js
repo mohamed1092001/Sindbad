@@ -3,7 +3,7 @@ $(document).ready(function () {
     // الزينه
 
     function winning() {
-        var duration = 15 * 1000; // مدة التأثير بالميلي ثانية (15 ثانية)
+        var duration = 30 * 1000; // مدة التأثير بالميلي ثانية (15 ثانية)
         var animationEnd = Date.now() + duration;
 
         function triggerConfetti() {
@@ -31,8 +31,6 @@ $(document).ready(function () {
 
     // #######
 
-    var stopAngle;
-
     // الكود الذي سيشغل العجلة عند الضغط على الزر
     $(".spin-btn").click(function () {
 
@@ -40,12 +38,27 @@ $(document).ready(function () {
         if (!sessionStorage.getItem("log-sindbad")) {
             // إذا كانت session موجودة، ننفذ الكود الخاص بالتدوير
             $(this).attr("disabled", "disabled");
-            let option = Math.floor(Math.random() * 2);
-            if (option == 0) {
-                stopAngle = Math.floor(Math.random() * (180 - 120 + 1)) + 120;
-            } else {
-                stopAngle = Math.floor(Math.random() * (360 - 300 + 1)) + 300;
+            let option = Math.floor(Math.random() * 5); // اختيار عشوائي بين 0 و 4 (خمسة خيارات)
+            console.log(option)
+            let stopAngle;
+
+            if (option === 0) {
+                //  (من 10 إلى 50 درجة)
+                stopAngle = Math.floor(Math.random() * (50 - 10 + 1)) + 10
+            } else if (option === 1) {
+                // (من 70 إلى 110 درجة)
+                stopAngle = Math.floor(Math.random() * (110 - 70 + 1)) + 70;
+            } else if (option === 2) {
+                // (من 130 إلى 170 درجة)
+                stopAngle = Math.floor(Math.random() * (170 - 130 + 1)) + 130;
+            } else if (option === 3) {
+                // (من 190 إلى 230 درجة)
+                stopAngle = Math.floor(Math.random() * (230 - 190 + 1)) + 190;
+            } else if (option === 4) {
+                // (من 310 إلى 350 درجة)
+                stopAngle = Math.floor(Math.random() * (350 - 310 + 1)) + 310;
             }
+
 
             // تحديد عدد التدويرات العشوائية
             var spins = Math.floor(Math.random() * 5) + 3; // بين 3 و 7 لفات
@@ -63,22 +76,40 @@ $(document).ready(function () {
                     step: function (now) {
                         // تدوير العجلة باستخدام الـ CSS3
                         $(this).css({
-                            transform: 'rotate(' + now + 'deg)'
+                            transform: 'rotate(-' + now + 'deg)'
                         });
                     },
                     // بعد انتهاء التدوير يمكن إضافة أي تأثير آخر
                     complete: function () {
                         // هنا يمكن إضافة منطق للتحقق من الجوائز أو عرض النتيجة
                         if (option == 0) {
-                            console.log("المكسب الاصفر");
                             winning()
                             setTimeout(function () {
+                                $(".cobon").find("img").attr("src", "imgs/1%.png")
                                 $(".cobon").fadeIn(700)
                             }, 300)
-                        } else {
-                            console.log("المكسب الفيروزى");
+                        } else if (option == 1) {
                             winning()
                             setTimeout(function () {
+                                $(".cobon").find("img").attr("src", "imgs/2%.png")
+                                $(".cobon").fadeIn(700)
+                            }, 300)
+                        } else if (option == 2) {
+                            winning()
+                            setTimeout(function () {
+                                $(".cobon").find("img").attr("src", "imgs/kitchen.png")
+                                $(".cobon").fadeIn(700)
+                            }, 300)
+                        } else if (option == 3) {
+                            winning()
+                            setTimeout(function () {
+                                $(".cobon").find("img").attr("src", "imgs/3%.png")
+                                $(".cobon").fadeIn(700)
+                            }, 300)
+                        } else if (option == 4) {
+                            winning()
+                            setTimeout(function () {
+                                $(".cobon").find("img").attr("src", "imgs/iphone.png")
                                 $(".cobon").fadeIn(700)
                             }, 300)
                         }
@@ -106,11 +137,15 @@ $(document).ready(function () {
     // });
 
     // setInterval(function () {
-    //     if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
-    //         document.body.innerHTML = ""; // مسح الصفحة
-    //         alert("DevTools Detected! Please close it.");
+    //     // تحقق من عرض الشاشة (إيقاف الكود للشاشات الصغيرة)
+    //     if (window.innerWidth > 768) {
+    //         if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
+    //             document.body.innerHTML = ""; // مسح الصفحة
+    //             alert("DevTools Detected! Please close it.");
+    //         }
     //     }
     // }, 500);
+
 });
 
 
@@ -119,38 +154,45 @@ $(".next-btn").click(function () {
     const name = document.getElementById('name_inp').value.trim();
     const phone = document.getElementById('phone_inp').value.trim();
     const state = document.getElementById('state').value;
+    const designer = document.getElementById('designer_inp').value;
 
     // التحقق من القيم
     if (name === '') {
         $(".error").slideDown().html('من فضلك أدخل اسمك ')
         setTimeout(function () {
             $(".error").slideUp()
-        }, 2000)
+        }, 2500)
         return;
     } else if (phone === '') {
         $(".error").slideDown().html('من فضلك أدخل رقم تليفونك')
         setTimeout(function () {
             $(".error").slideUp()
-        }, 2000)
+        }, 2500)
         return;
     } else if (!/^(7|9|2)[0-9]{7}$/.test(phone)) { // التحقق من رقم الهاتف العماني
         $(".error").slideDown().html('من فضلك أدخل رقم تليفون عماني صحيح')
         setTimeout(function () {
             $(".error").slideUp()
-        }, 2000)
+        }, 2500)
         return;
     } else if (state === '0') {
         $(".error").slideDown().html('من فضلك اختر الولاية')
         setTimeout(function () {
             $(".error").slideUp()
-        }, 2000)
+        }, 2500)
+        return;
+    } else if (designer === '') {
+        $(".error").slideDown().html('من فضلك أدخل اسم المصمم')
+        setTimeout(function () {
+            $(".error").slideUp()
+        }, 2500)
         return;
     } else {
         // في حالة التحقق بنجاح
         $(".form-container form").addClass("first-done")
         setTimeout(function () {
             $(".quiz-1").css("transform", "translateX(-111.5%)")
-        }, 300)
+        }, 400)
     }
 });
 
