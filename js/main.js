@@ -84,7 +84,7 @@ $(document).ready(function () {
                         if (option == 0) {
                             winning()
                             setTimeout(function () {
-                                $(".cobon").find("img").attr("src", "imgs/1%.png")
+                                $(".cobon").find("img").attr("src", "imgs/1.png")
                                 $(".cobon").fadeIn(700)
                                 setTimeout(function(){
                                     window.print()
@@ -93,7 +93,7 @@ $(document).ready(function () {
                         } else if (option == 1) {
                             winning()
                             setTimeout(function () {
-                                $(".cobon").find("img").attr("src", "imgs/2%.png")
+                                $(".cobon").find("img").attr("src", "imgs/2.png")
                                 $(".cobon").fadeIn(700)
                                 setTimeout(function(){
                                     window.print()
@@ -111,7 +111,7 @@ $(document).ready(function () {
                         } else if (option == 3) {
                             winning()
                             setTimeout(function () {
-                                $(".cobon").find("img").attr("src", "imgs/3%.png")
+                                $(".cobon").find("img").attr("src", "imgs/3.png")
                                 $(".cobon").fadeIn(700)
                                 setTimeout(function(){
                                     window.print()
