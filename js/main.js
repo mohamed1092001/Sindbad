@@ -33,7 +33,6 @@ $(document).ready(function () {
 
     // الكود الذي سيشغل العجلة عند الضغط على الزر
     $(".spin-btn").click(function () {
-
         // التحقق من وجود session باسم log-sindbad بعد الضغط على الزر
         if (!sessionStorage.getItem("log-sindbad")) {
             // إذا كانت session موجودة، ننفذ الكود الخاص بالتدوير
@@ -87,30 +86,45 @@ $(document).ready(function () {
                             setTimeout(function () {
                                 $(".cobon").find("img").attr("src", "imgs/1%.png")
                                 $(".cobon").fadeIn(700)
+                                setTimeout(function(){
+                                    window.print()
+                                },2000)
                             }, 300)
                         } else if (option == 1) {
                             winning()
                             setTimeout(function () {
                                 $(".cobon").find("img").attr("src", "imgs/2%.png")
                                 $(".cobon").fadeIn(700)
+                                setTimeout(function(){
+                                    window.print()
+                                },2000)
                             }, 300)
                         } else if (option == 2) {
                             winning()
                             setTimeout(function () {
                                 $(".cobon").find("img").attr("src", "imgs/kitchen.png")
                                 $(".cobon").fadeIn(700)
+                                setTimeout(function(){
+                                    window.print()
+                                },2000)
                             }, 300)
                         } else if (option == 3) {
                             winning()
                             setTimeout(function () {
                                 $(".cobon").find("img").attr("src", "imgs/3%.png")
                                 $(".cobon").fadeIn(700)
+                                setTimeout(function(){
+                                    window.print()
+                                },2000)
                             }, 300)
                         } else if (option == 4) {
                             winning()
                             setTimeout(function () {
                                 $(".cobon").find("img").attr("src", "imgs/iphone.png")
                                 $(".cobon").fadeIn(700)
+                                setTimeout(function(){
+                                    window.print()
+                                },2000)
                             }, 300)
                         }
                     }
@@ -125,27 +139,26 @@ $(document).ready(function () {
     });
 
     // keyboard - dev tools
-    // document.addEventListener("keydown", function (e) {
-    //     // منع فتح DevTools باستخدام F12 أو Ctrl+Shift+I أو Ctrl+Shift+J
-    //     if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || (e.ctrlKey && e.key === "U")) {
-    //         e.preventDefault();
-    //     }
-    // });
+    document.addEventListener("keydown", function (e) {
+        // منع فتح DevTools باستخدام F12 أو Ctrl+Shift+I أو Ctrl+Shift+J
+        if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || (e.ctrlKey && e.key === "U")) {
+            e.preventDefault();
+        }
+    });
 
-    // document.addEventListener("contextmenu", function (e) {
-    //     e.preventDefault();
-    // });
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
 
-    // setInterval(function () {
-    //     // تحقق من عرض الشاشة (إيقاف الكود للشاشات الصغيرة)
-    //     if (window.innerWidth > 768) {
-    //         if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
-    //             document.body.innerHTML = ""; // مسح الصفحة
-    //             alert("DevTools Detected! Please close it.");
-    //         }
-    //     }
-    // }, 500);
-
+    setInterval(function () {
+        // تحقق من عرض الشاشة (إيقاف الكود للشاشات الصغيرة)
+        if (window.innerWidth > 768) {
+            if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
+                document.body.innerHTML = ""; // مسح الصفحة
+                alert("DevTools Detected! Please close it.");
+            }
+        }
+    }, 500);
 });
 
 
